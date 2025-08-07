@@ -1,0 +1,27 @@
+FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
+WORKDIR /frontend
+
+COPY ["frontend/frontend.csproj", "frontend/"]
+
+WORKDIR "/frontend"
+RUN dotnet restore "frontend/frontend.csproj"
+   
+COPY . .
+
+RUN if [ -d "tests" ]; then rm -rf tests; fi
+
+RUN dotnet publish "frontend/frontend.csproj" -c Release -o /app/publish \
+    --no-restore \
+    -p:EnvironmentName=Production
+
+FROM mcr.microsoft.com/dotnet/aspnet:8.0
+WORKDIR /app
+
+EXPOSE 9090
+
+ENV ASPNETCORE_URLS=http://+:9090
+
+COPY --from=build /app/publish .
+
+ENTRYPOINT ["dotnet", "frontend.dll"]
+
