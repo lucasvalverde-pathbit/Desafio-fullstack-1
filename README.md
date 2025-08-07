@@ -1,57 +1,73 @@
 # Gerenciador de Produtos e Pedidos
 
-## Descrição
-Este projeto é uma aplicação que fornece uma interface para clientes gerenciarem seus pedidos. A aplicação permite que os usuários criem pedidos, visualizem seus pedidos existentes e interajam com a interface de forma intuitiva.
+## 📄 Descrição
+Este projeto é uma aplicação web fullstack voltada para o gerenciamento de produtos e pedidos, oferecendo áreas distintas para administradores e clientes. A aplicação permite que usuários realizem operações como cadastro, pedidos e acompanhamento, através de uma interface moderna, responsiva e intuitiva.
 
-## Funcionalidades
-- Área do Administrador: O administrador pode cadastrar produtos e atualizar o status dos pedidos dos clientes.
-- Formulário de Criar Produto: O administrador insere informações como nome, preço e quantidade em estoque para os produtos.
-- Área do Cliente: Os clientes podem criar novos pedidos e visualizar seus pedidos existentes.
-- Formulário de Criar Pedido: Os clientes podem inserir informações como CEP, endereço, número da casa, selecionar produtos e especificar quantidades.
-- Interface Responsiva: A aplicação é projetada para ser responsiva e funcionar em diferentes dispositivos.
+> O frontend é desenvolvido com **Razor Pages (ASP.NET Core)**, com HTML, CSS e JavaScript modularizado. O backend também é construído em **ASP.NET Core** com autenticação JWT e integração com banco de dados via **Entity Framework Core**.
 
-## Instalação
-Para instalar e executar o projeto, siga os passos abaixo:
+---
+
+## ✨ Funcionalidades
+
+### 👨‍💼 Área do Administrador
+- Cadastro de novos produtos (nome, preço, estoque).
+- Acompanhamento e atualização do status de pedidos dos clientes.
+
+### 👤 Área do Cliente
+- Cadastro e login com autenticação JWT.
+- Criação de novos pedidos com endereço via CEP e seleção de produtos.
+- Visualização de histórico de pedidos.
+
+### 💻 Interface
+- Layout responsivo com design moderno.
+- Modais de edição e exclusão de conta.
+- Componentização com JavaScript em módulos.
+
+---
+
+## ⚙️ Instalação
 
 1. Clone o repositório:
-   ```bash
-   git clone https://github.com/caroline-nunes-pathbit/Projeto01.git
-   cd Projeto01
-   ```
+```bash
+git clone https://github.com/lucasvalverde-pathbit/Desafio-fullstack-1.git
+cd Desafio-fullstack-1
+```
 
+2. Construa e inicie os containers com Docker:
+```bash
+docker-compose up -d --build
+```
 
-2. Construa e inicie os containers usando Docker:
-   ```bash
-   docker-compose up -d --build
-   ```
+---
 
-## Uso
-Após iniciar a aplicação, acesse `http://localhost:9090` em seu navegador.
+## 🚀 Como Usar
+Após iniciar a aplicação, acesse no navegador:
+```
+http://localhost:9090
+```
 
-## Funcionalidades do Backend
-- **Endpoint de Clientes**: 
-  - Criação de clientes automaticamente ao cadastrar um usuário do tipo 'Cliente'.
-  - Atualização do perfil do usuário.
+---
 
-- **Endpoint de Pedidos**:
-  - Obtenção de endereço formatado a partir do CEP fornecido.
-  - Obtenção de todos os pedidos de um cliente autenticado.
-  - Criação de novos pedidos com validação de dados.
-  - Obtenção de todos os pedidos de um administrador.
-  - Atualização do status de um pedido por um administrador.
+## 📡 API - Principais Endpoints
 
-- **Endpoint de Produtos**:
-  - Criação de novos produtos por administradores.
+### 🔐 Usuários
+- Cadastro e login com retorno de token JWT.
+- Atualização de perfil e informações pessoais.
 
-- **Endpoint de Usuários**:
-  - Login de usuários com retorno de token JWT.
-  - Cadastro de novos usuários.
-  - Atualização das informações de usuários existentes.
+### 📦 Produtos
+- Cadastro de produtos (admin).
+- Listagem para pedidos (cliente).
 
-## Tecnologias
-- **Frontend**: Utiliza JavaScript, HTML e CSS.
-- **Backend**: Utiliza ASP.NET Core, Entity Framework Core, e autenticação em JWT.
-- **Dependências**: Serve, Webpack, e outras bibliotecas para construção e estilização.
+### 🛒 Pedidos
+- Criação de pedidos com busca de endereço via CEP.
+- Visualização de pedidos do cliente autenticado.
+- Atualização de status (admin).
 
+---
 
+## 🛠 Tecnologias Utilizadas
 
+- **Frontend**: Razor Pages (ASP.NET Core), HTML5, CSS3, JavaScript (ES Modules), Bootstrap.
+- **Backend**: ASP.NET Core, Entity Framework Core, autenticação com JWT.
+- **DevOps**: Docker, Docker Compose.
+- **Outros**: Webpack, bibliotecas auxiliares para construção e validação.
