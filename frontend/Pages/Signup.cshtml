@@ -1,0 +1,52 @@
+@page
+@model SignupModel
+@{
+    Layout = "_Layout";
+    ViewData["Title"] = "Área de Signup";
+    ViewData["Stylesheet"] = "signup.css"; 
+}
+
+<div class="d-flex justify-content-center align-items-center min-vh-100">
+  <div id="registerContainer" class="card p-4 shadow-sm w-100" style="max-width: 450px;">
+    <h1 class="text-center">Cadastro</h1>
+    <form id="registerForm">
+      <div class="mb-3">
+        <label for="name" class="form-label">Nome Completo</label>
+        <input type="text" class="form-control" id="name" autocomplete="name" required>
+      </div>
+
+      <div class="mb-3">
+        <label for="userName" class="form-label">Nome de Usuário</label>
+        <input type="text" class="form-control" id="userName" autocomplete="username" required>
+      </div>
+
+      <div class="mb-3">
+        <label for="userEmail" class="form-label">Email</label>
+        <input type="email" class="form-control" id="userEmail" autocomplete="email" required>
+      </div>
+
+      <div class="mb-3">
+        <label for="password" class="form-label">Senha</label>
+        <input type="password" class="form-control" id="password" autocomplete="new-password" required>
+      </div>
+
+      <div class="mb-3">
+        <label for="userType" class="form-label">Tipo de Usuário</label>
+        <select id="userType" class="form-select" required>
+          <option value="Cliente">Cliente</option>
+          <option value="Administrador">Administrador</option>
+        </select>
+      </div>
+
+      <button type="submit" class="btn w-100">Cadastrar</button>
+    </form>
+
+    <p class="text-center mt-3">
+      Já tem uma conta? <a href="/index" id="showLogin">Faça Login</a>
+    </p>
+  </div>
+</div>
+
+@section Scripts {
+    <script type="module" src="~/js/signup.js"></script>
+}

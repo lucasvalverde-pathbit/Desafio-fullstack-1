@@ -1,0 +1,109 @@
+@import url('variables.css');
+
+/* ==== BASE ==== */
+body {
+    background: var(--background) !important;
+    font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #2c3e50;
+}
+
+header {
+    background: var(--background-header) !important;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* ==== TITULO ==== */
+h1 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 1.5rem;
+}
+
+/* ==== CONTAINER DO FORM ==== */
+#registerContainer {
+    border-radius: 12px;
+    border: 1px solid #e5e7eb;
+}
+
+
+/* ==== INPUTS E SELECTS ==== */
+input.form-control,
+select.form-select {
+    font-size: 0.95rem;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    background-color: var(--background-form);
+    color: var(--text);
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+input.form-control:focus,
+select.form-select:focus {
+    border-color: var(--border);
+    box-shadow: 0 0 0 0.15rem rgba(59, 130, 246, 0.25);
+    outline: none;
+}
+
+.span{
+    background-color: transparent;
+}
+
+/* ==== BOTÃO ==== */
+
+.btn{
+    background-color: var(--button) !important;
+ }
+ 
+ .btn-cancel{
+     background-color: var(--button-cancel) !important;   
+ }
+
+.btn,
+.btn-cancel {
+    color: var(--text) !important;
+    font-weight: 500 !important;
+    border: none !important;
+    border-radius: 8px !important;
+    padding: 0.7rem !important;
+    font-size: 1rem !important;
+    transition: background-color 0.2s ease !important;
+}
+/* ==== LINK DE LOGIN ==== */
+a {
+    color: var(--text);
+    font-weight: 500;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+a:hover {
+    color: var(--text-hover);
+    text-decoration: underline;
+}
+
+/* ==== MENSAGEM (caso usada) ==== */
+#messageContainer {
+    max-width: 420px;
+    margin: 1rem auto;
+    padding: 1rem;
+    font-size: 0.95rem;
+}
+
+/* ==== RESPOSTA DE API ==== */
+#responseContainer {
+    margin-top: 1.5rem;
+    padding: 1rem;
+    background-color: var(--background);
+    border-radius: 8px;
+    color: var(--text);
+    font-size: 0.9rem;
+}
+
+#customAlert {
+    transition: opacity 0.5s ease;
+    z-index: 1055;
+    background-color: var(--button);
+}

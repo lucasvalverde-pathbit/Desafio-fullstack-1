@@ -1,0 +1,24 @@
+:root {
+        --background: linear-gradient(to right, #d9f7e4, #a8e6cf, #6bc89a);
+        --background-header: linear-gradient(to right, #6bc89a, #4ca77d, #379e63);
+        --background-light: #e6fbf1;
+        --background-muted: #d1f0dc;
+        --background-form: #ffffff;
+    
+        --primary: #4ca77d;
+        --primary-hover: #379e63;
+    
+        --warning: #facc15;
+        --button: #4ca77d;
+        --button-cancel: #ff6060;
+    
+        --text-dark: #2c3e50;
+        --text: #1f2937;
+        --text-hover: #101721;
+        --text-muted: #374151;
+    
+        --border: #b0d9bc;
+        --border-input: #9ac8a9;
+    
+        --focus-ring: rgba(76, 167, 125, 0.25);
+    }
