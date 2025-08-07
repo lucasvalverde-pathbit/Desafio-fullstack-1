@@ -1,0 +1,51 @@
+name: projeto01
+services:
+  db:
+    image: postgres:latest
+    container_name: db
+    environment:
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: root
+      POSTGRES_DB: projeto01
+    ports:
+      - "5432:5432"
+    networks:
+      - projeto01-net
+
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile.api
+    container_name: api
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Production
+      - ASPNETCORE_URLS=http://+:8080
+      - JWT_KEY=ewgfgy376f3
+      - ConnectionStrings__DefaultConnection=Host=db;Port=5432;Username=root;Password=root;Database=projeto01;
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db
+    networks:
+      - projeto01-net
+
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile.web
+    container_name: web
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Production
+      - ASPNETCORE_URLS=http://+:9090
+    ports:
+      - "9090:9090"
+    depends_on:
+      - api
+    networks:
+      - projeto01-net
+
+networks:
+  projeto01-net:
+    driver: bridge   
+
+    
