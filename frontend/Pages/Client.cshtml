@@ -1,0 +1,68 @@
+@page
+@model ClientModel
+@{
+    Layout = "_Layout";
+    ViewData["Title"] = "Área do Cliente";
+    ViewData["Stylesheet"] = "client.css";    
+}
+
+<div id="header" class="d-flex justify-content-end gap-2 p-3 bg-light border-bottom">
+    <button id="profileBtn" class="btn">👤 <span id="nameDisplay"></span></button>
+    <button id="logoutBtn" class="btn-cancel">Sair</button>
+</div>
+
+<div class="container my-4">
+    <h1 class="text-center mb-4">Bem-vindo Cliente!</h1>
+
+    <!-- Modal de Criar Pedido -->
+    <div id="orderModal" class="modal">
+        <div class="modal-content p-4">
+            <h2>Criar Pedido</h2>
+            <form id="createOrderForm">
+
+                <div class="mb-3">
+                    <label for="cep">CEP:</label>
+                    <input type="text" id="cep" class="form-control" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="address">Endereço:</label>
+                    <input type="text" id="address" class="form-control" readonly>
+                </div>
+
+                <div class="mb-3">
+                    <label for="houseNumber">Número da Casa:</label>
+                    <input type="text" id="houseNumber" class="form-control" required>
+                </div>
+
+                <div class="product-entry mb-3">
+                    <label for="product-select">Produto:</label>
+                    <select id="product-select" class="form-control product-select" required>
+                        <!-- Produtos carregados -->
+                    </select>
+
+                    <label for="quantity-input" class="mt-2">Quantidade:</label>
+                    <input type="number" id="quantity-input" class="form-control quantity-input" required>
+
+                    <button type="button" id="addProductBtn" class="btn btn-secondary mt-3">Adicionar Produto</button>
+                </div>
+
+                <div class="d-flex gap-2 mt-4">
+                    <button type="submit" id="submitOrderBtn" class="btn btn-primary">Criar Pedido</button>
+                    <button type="button" id="cancelOrder" class="btn btn-secondary">Cancelar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <button id="createOrderBtn" class="btn btn-success mb-4">Criar Pedido</button>
+
+    <h2 class="mb-3">Meus Pedidos</h2>
+    <div id="ordersList">
+        <!-- Pedidos listados -->
+    </div>
+</div>
+
+@section Scripts {
+    <script type="module" src="~/js/client.js"></script>
+}

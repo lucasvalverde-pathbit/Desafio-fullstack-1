@@ -1,0 +1,61 @@
+@import url('variables.css');
+
+/* ==== BASE ==== */
+body {
+    font-family: 'Inter', Arial, sans-serif;
+    background: var(--background);
+    color: #1a1a1a;
+    margin: 0;
+    padding: 0;
+}
+
+/* ==== TÍTULOS ==== */
+h1, h2 {
+    font-weight: 600;
+    color: var(--text);
+    text-align: center;
+}
+
+
+/* ==== BOTÕES DE PERFIL E LOGOUT ==== */
+#profileBtn, #logoutBtn {
+    min-width: 120px;
+}
+
+/* ==== BOTÃO ADICIONAR PRODUTO ==== */
+#addProduct {
+    min-width: 140px;
+}
+
+/* ==== BARRA DE BUSCA ==== */
+#productSearch {
+    max-width: 400px;
+}
+
+/* ==== TABELAS ==== */
+table {
+    /* Bootstrap table classes cuidam da maior parte */
+    /* Aqui pode deixar estilos extras se quiser */
+    border-radius: 0.375rem; /* 6px */
+}
+
+table th, table td {
+    vertical-align: middle;
+}
+
+/* ==== MODAL ==== */
+.modal-content form {
+    padding: 1rem 1.5rem;
+}
+
+/* ==== BOTÕES MODAL ==== */
+#productForm button {
+    min-width: 100px;
+}
+
+/* ==== SEÇÃO PEDIDOS ==== */
+#orderSection {
+    margin-top: 2rem;
+}
+
+

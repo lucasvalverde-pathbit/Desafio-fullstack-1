@@ -1,0 +1,116 @@
+@import url('variables.css');
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: var(--background);
+    font-size: 16px;
+    color: white;
+}
+
+#logoutBtn {
+    margin-left: auto;
+}
+
+#createOrderBtn {
+    display: block;
+    margin: 20px auto;
+}
+
+
+h1, h2 {
+    color: var(--text);
+    text-align: center;
+}
+
+
+select, input {
+    margin: 2% 0 2% 0;
+    width: 90%;
+    padding: 10px;
+    font-size: 14px;
+    border-radius: 9px;
+    border: 2px solid var(--border-input);
+    display: block;
+}
+
+.modal {
+    display: none;
+    color: var(--text);
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--background-form);
+}
+
+.modal-content {
+    background: var(--background-form);
+    color: var(--text);
+    border-radius: 10px;
+    padding: 20px;
+    margin: 5% auto;
+    width: 40%;
+    max-height: 70vh;
+    overflow-y: auto;
+    position: relative;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#orderModal input,
+#orderModal select {
+    width: 90%;
+    padding: 10px;
+    font-size: 14px;
+    border-radius: 9px;
+    border: 2px solid var(--border-input);
+    display: block;
+    margin: 8px 0;
+}
+
+.remove-product-btn {
+    margin: 20px;
+}
+
+.order {
+    background-color: var(--background-form);
+    border-radius: 15px;
+    padding: 15px;
+    margin: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.order h3 {
+    color: var(--text);
+}
+
+.order p {
+    color: var(--text)
+}
+
+.order ul {
+    padding-left: 20px;
+    list-style-type: disc;
+}
+
+#ordersList {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    padding: 0 10%;
+}
+
+.order ul {
+    padding-left: 20px;
+    margin-top: 10px;
+}
+
+.order li {
+    margin-bottom: 8px;
+}

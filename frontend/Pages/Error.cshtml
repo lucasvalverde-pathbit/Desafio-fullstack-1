@@ -1,0 +1,18 @@
+@page
+@model ErrorModel
+@{
+    Layout = "_Layout";
+    ViewData["Title"] = "Área de Erro";
+    ViewData["Stylesheet"] = "error.css"; 
+}
+
+    <div class="errorContainer">
+        <h1>Você não está autenticado!</h1>
+        <p>Clique para voltar para a página de login</p>
+        <button class="btn" id="loginBtn">Fazer login</button>
+    </div>
+
+@section Scripts {
+    <script type="module" src="~/js/error.js"></script>
+}
+

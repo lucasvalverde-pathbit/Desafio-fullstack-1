@@ -1,0 +1,30 @@
+@page
+@model IndexModel
+@{
+    Layout = "_Layout";
+    ViewData["Title"] = "Área de Index";
+    ViewData["Stylesheet"] = "index.css"; 
+}
+<div class="d-flex justify-content-center align-items-center min-vh-100">
+    <div class="card shadow p-4" id="loginContainer" style="width: 100%; max-width: 400px;">
+        <h1 class="text-center mb-4">Login</h1>
+        <form id="loginForm">
+            <div class="mb-3">
+                <label for="email" class="form-label">Email:</label>
+                <input type="email" class="form-control" id="email" name="userEmail" required autocomplete="email">
+            </div>
+            <div class="mb-3">
+                <label for="passwordLogin" class="form-label">Senha:</label>
+                <input type="password" class="form-control" id="passwordLogin" name="password" required autocomplete="current-password">
+            </div>
+            <button type="submit" class="btn w-100">Entrar</button>
+        </form>
+        <p class="text-center mt-3">Não tem uma conta? <a href="/signup" id="showRegister">Cadastre-se</a></p>
+    </div>
+
+    <div id="messageContainer" class="alert alert-info mt-3 d-none text-center" role="alert"></div>
+</div>
+
+@section Scripts {
+    <script type="module" src="~/js/login.js"></script>
+}

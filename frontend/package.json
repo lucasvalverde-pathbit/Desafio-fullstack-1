@@ -1,0 +1,18 @@
+{
+  "name": "frontend",
+  "version": "1.0.0",
+  "description": "Frontend application for Projeto01",
+  "scripts": {
+    "start": "serve -s . -l 3000",
+    "build": "webpack --config webpack.config.js --mode production"
+  },
+  "dependencies": {
+    "serve": "^14.2.0"
+  },
+  "devDependencies": {
+    "webpack": "^5.89.0",
+    "webpack-cli": "^5.1.4",
+    "style-loader": "^3.3.3",
+    "css-loader": "^6.8.1"
+  }
+}
